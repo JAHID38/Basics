@@ -2,15 +2,14 @@ package oop.basic;
 
 class Logger {
 
-    public void log ()
-    {
-        System.out.println("Non-static method in a non-static class");
-    }
-    public static void logStatic (String msg)
-    {
-        System.out.printf("Static method in a non-static class %s\n", msg);
-        System.out.println();
-    }
+        public void log ()
+        {
+            System.out.println("Non-static method in a non-static class");
+        }
+        public static void logStatic (String msg)
+        {
+            System.out.printf("Static method in a non-static class %s\n", msg);
+        }
 
     static class InnerStaticClass{
         public void log ()
@@ -34,5 +33,6 @@ public class StaticProblems {
         //Logger.log();   //Non-static method 'log()' cannot be referenced from a static context
 
         Logger.InnerStaticClass.logStatic();
+        new Logger.InnerStaticClass().logStatic();
     }
 }
